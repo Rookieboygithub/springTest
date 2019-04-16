@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/basic")
 public class BasicController {
 
-	@GetMapping(value = "")
+	@GetMapping(value = "/")
 	@ResponseBody
 	public ModelAndView index() {
 		ModelAndView model = new ModelAndView();

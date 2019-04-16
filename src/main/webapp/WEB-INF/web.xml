@@ -29,7 +29,7 @@
 		<servlet-name>springMVC</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	
 
 	<!-- 配置Spring提供的字符编码过滤器 -->
 	<filter>

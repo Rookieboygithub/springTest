@@ -22,14 +22,15 @@
 	<bean
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" />
 
-
-
 	<!-- 视图解析器 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 配置从项目根目录到指定目录一端路径 ,建议指定浅一点的目录 -->
 		<property name="prefix" value="/WEB-INF/view/"></property>
 		<!-- 文件的后缀名 -->
 		<property name="suffix" value=".html"></property>
 	</bean>
 
+	<mvc:resources location="/WEB-INF/view/" mapping="/WEB-INF/view/*" />
+	<mvc:resources mapping="/css/**" location="/css/" />  
 </beans>
