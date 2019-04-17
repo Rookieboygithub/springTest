@@ -31,6 +31,24 @@
 		<property name="suffix" value=".html"></property>
 	</bean>
 
-	<mvc:resources location="/WEB-INF/view/" mapping="/WEB-INF/view/*" />
-	<mvc:resources mapping="/css/**" location="/css/" />  
+	<mvc:resources location="/WEB-INF/view/"
+		mapping="/WEB-INF/view/*" />
+	<mvc:resources mapping="/css/**" location="/css/" />
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<!-- 需排除拦截的地址 -->
+			<!-- <mvc:exclude-mapping path="/userController/login"/> -->
+			<!--自定义的Interceptor -->
+			<bean id="basicInterceptorByExtends" class="com.springtest.interceptor.BasicInterceptorByExtends"></bean>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<!-- 需排除拦截的地址 -->
+			<!-- <mvc:exclude-mapping path="/userController/login"/> -->
+			<!--自定义的Interceptor -->
+			<bean id="basicInterceptorByInterface" class="com.springtest.interceptor.BasicInterceptorByInterface"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 </beans>
